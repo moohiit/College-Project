@@ -1,0 +1,9 @@
+git init
+echo "# Demo" >> README.md
+git add .
+git commit -m "first commit"
+git clone https://github.com/moohiit/College-Project.git
+git branch -M main
+git checkout -b prahlad
+git push --set-upstream origin prahlad
+
