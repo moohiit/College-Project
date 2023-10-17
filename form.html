@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Deeksha Workshop</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -10,7 +9,7 @@
         margin: 0; /* Remove default margin */
         padding: 0; /* Remove default padding */
       }
-      
+
       header {
         background-color: #007bff;
         color: #fff;
@@ -47,9 +46,7 @@
         border: 1px solid #ccc;
         border-radius: 3px;
         margin-right: 10px; /* Add margin from the right */
-        width: calc(
-          100% - 10px
-        ); /* Subtract margin width to maintain fixed size */
+        width: calc(100% - 10px); /* Subtract margin width to maintain fixed size */
       }
 
       .form-checkbox {
@@ -76,6 +73,23 @@
         text-align: center;
         padding: 10px 0;
       }
+
+      /* Responsive Styling */
+      @media (max-width: 768px) {
+        .form-input {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 10px;
+        }
+
+        .form-input {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -90,119 +104,119 @@
         <form action="/submit" method="post" class="form-container">
           <div>
             <div>
-            <label for="date" class="form-label">Date:</label>
-          <input type="date" id="date" name="date" class="form-input" required />
-  
-          <label for="faculty" class="form-label">Faculty:</label>
-          <input
-            type="text"
-            id="faculty"
-            name="faculty"
-            class="form-input"
-            required
-          />
-  
-          <label for="college" class="form-label">College/School:</label>
-          <input
-            type="text"
-            id="college"
-            name="college"
-            class="form-input"
-            required
-          />
-  
-          <label for="location" class="form-label">Location:</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            class="form-input"
-            required
-          />
-  
-          <h2 class="form-header">TGT Teachers:</h2>
-          <label for="tgt_name" class="form-label">Names:</label>
-          <input
-            type="text"
-            id="tgt_name"
-            name="tgt_name"
-            class="form-input"
-            required
-          />
-  
-          <label for="tgt_count" class="form-label">Count:</label>
-          <input
-            type="number"
-            id="tgt_count"
-            name="tgt_count"
-            class="form-input"
-            required
-          />
-          </div>
-  
-          <div>
-            <h2 class="form-header">PGT Teachers:</h2>
-          <label for="pgt_name" class="form-label">Names:</label>
-          <input
-            type="text"
-            id="pgt_name"
-            name="pgt_name"
-            class="form-input"
-            required
-          />
-  
-          <label for="pgt_count" class="form-label">Count:</label>
-          <input
-            type="number"
-            id="pgt_count"
-            name="pgt_count"
-            class="form-input"
-            required
-          />
-          </div>
+              <label for="date" class="form-label">Date:</label>
+              <input type="date" id="date" name="date" class="form-input" required />
+
+              <label for="faculty" class="form-label">Faculty:</label>
+              <input
+                type="text"
+                id="faculty"
+                name="faculty"
+                class="form-input"
+                required
+              />
+
+              <label for="college" class="form-label">College/School:</label>
+              <input
+                type="text"
+                id="college"
+                name="college"
+                class="form-input"
+                required
+              />
+
+              <label for="location" class="form-label">Location:</label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                class="form-input"
+                required
+              />
+
+              <h2 class="form-header">TGT Teachers:</h2>
+              <label for="tgt_name" class="form-label">Names:</label>
+              <input
+                type="text"
+                id="tgt_name"
+                name="tgt_name"
+                class="form-input"
+                required
+              />
+
+              <label for="tgt_count" class="form-label">Count:</label>
+              <input
+                type="number"
+                id="tgt_count"
+                name="tgt_count"
+                class="form-input"
+                required
+              />
+            </div>
+
+            <div>
+              <h2 class="form-header">PGT Teachers:</h2>
+              <label for="pgt_name" class="form-label">Names:</label>
+              <input
+                type="text"
+                id="pgt_name"
+                name="pgt_name"
+                class="form-input"
+                required
+              />
+
+              <label for="pgt_count" class="form-label">Count:</label>
+              <input
+                type="number"
+                id="pgt_count"
+                name="pgt_count"
+                class="form-input"
+                required
+              />
+            </div>
           </div>
           <div>
             <label for="workshop_conducted" class="form-label"
-            >Workshop Conducted (Yes/No):</label
-          >
-          <input
-            type="checkbox"
-            id="workshop_conducted"
-            name="workshop_conducted"
-            class="form-checkbox"
-            required
-          />
-  
-          <h2 class="form-header">Strength of the student (Tenth/Twelth):</h2>
-          <label for="tenth_strength" class="form-label">Tenth:</label>
-          <input
-            type="number"
-            id="tenth_strength"
-            name="tenth_strength"
-            class="form-input"
-            required
-          />
-          <label for="twelth_strength" class="form-label">Twelth:</label>
-          <input
-            type="number"
-            id="twelth_strength"
-            name="twelth_strength"
-            class="form-input"
-            required
-          />
-  
-          <label for="topic_discussed" class="form-label">Topic Discussed:</label>
-          <textarea
-            id="topic_discussed"
-            name="topic_discussed"
-            class="form-input"
-            required
-          ></textarea>
-  
-          <label for="date" class="form-label">Next Visit if any:</label>
-          <input type="date" id="date" name="date" class="form-input" required />
-  
-          <input type="submit" id="alert" value="Submit" class="form-submit" />
+              >Workshop Conducted (Yes/No):</label
+            >
+            <input
+              type="checkbox"
+              id="workshop_conducted"
+              name="workshop_conducted"
+              class="form-checkbox"
+              required
+            />
+
+            <h2 class="form-header">Strength of the student (Tenth/Twelth):</h2>
+            <label for="tenth_strength" class="form-label">Tenth:</label>
+            <input
+              type="number"
+              id="tenth_strength"
+              name="tenth_strength"
+              class="form-input"
+              required
+            />
+            <label for="twelth_strength" class="form-label">Twelth:</label>
+            <input
+              type="number"
+              id="twelth_strength"
+              name="twelth_strength"
+              class="form-input"
+              required
+            />
+
+            <label for="topic_discussed" class="form-label">Topic Discussed:</label>
+            <textarea
+              id="topic_discussed"
+              name="topic_discussed"
+              class="form-input"
+              required
+            ></textarea>
+
+            <label for="date" class="form-label">Next Visit if any:</label>
+            <input type="date" id="date" name="date" class="form-input" required />
+
+            <input type="submit" id="alert" value="Submit" class="form-submit" />
           </div>
         </form>
       </div>
