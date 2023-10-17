@@ -1,4 +1,4 @@
-{
+  let DeekshaWorkShop = {
     "Zone": {
       "Pilibhit Region": [
         "BENHUR PUBLIC SCHOOL,PILIBHIT",
@@ -155,6 +155,109 @@
         "GURUKOOL CLASSES",
         "MANSI COACHING"
       ]
+    },
+    "teachers":{
+      "ZOOLOGY DEPTT.": [
+        "Dr. Rekha Gangwar",
+        "Dr. Monika Saxena",
+        "Ms. Farha Hussain",
+        "Mr. Chanchal Srivastava"
+      ],
+      "BOTANY DEPTT.": [
+        "Dr. Manoj Joshi",
+        "Ms. Somiya Ankita Massey",
+        "Ms. Nazia Qamar",
+        "Ms. Shilpa Chandravanshi"
+      ],
+      "BIOTECH.": [
+        "Dr. Nisha Dinkar",
+        "Dr. Mohd. Faheem Khan",
+        "Mr. Rakesh Kumar Sarkar",
+        "Ms. Bushra Fatima"
+      ],
+      "CHEMISTRY DEPTT.": [
+        "Dr. Ajai Gupta",
+        "Dr. Shalini Gupta",
+        "Mr. Gufran Ali"
+      ],
+      "MATHS DEPTT.": [
+        "Dr. Amit Kumar Gupta",
+        "Mr. Brijesh Babu",
+        "Dr. Pawan Saxena",
+        "Mr. Harshvardhan",
+        "Mr. Rajit Kumar"
+      ],
+      "PHYSICS DEPTT.": [
+        "Mr. Munish Kumar",
+        "Mr. Dinesh Kumar",
+        "Ms. Akanksha Gupta",
+        "Mr. Kumar Pal Singh"
+      ],
+      "HOME SC. DEPTT.": [
+        "Mrs. Pragya Ritambhara",
+        "Mrs. Shubhra Trivedi",
+        "Ms. Jyotsana Sharma",
+        "Ms. Shyama Chouhan"
+      ],
+      "EDUCATION DEPTT.": [
+        "Dr. R.K. Singh",
+        "Mrs. Kalpana Katiyar",
+        "Mr. S.S. Sharma",
+        "Mr. Om Pal Singh",
+        "Mrs. Savita Johari",
+        "Mr. Mohammad Javed",
+        "Mrs. Rachna Singh",
+        "Mrs. Meenu Kanotra",
+        "Mr. Ghanshyam",
+        "Mr. Harish Kumar",
+        "Mrs. Seema Saxena",
+        "Mr. Ahsan Ali",
+        "Mrs. Pragya",
+        "Mr. Trivendra Kumar",
+        "Mr. Nirpendra Pratap Singh",
+        "Ms. Swati Kaushik",
+        "Mrs. Taruna Rani",
+        "Mrs. Anuradha Pandey",
+        "Mrs. Mukta Mani Sharma",
+        "Ms. Archana Devi",
+        "Mrs. Retesh Gupta"
+      ],
+      "MANAGEMENT": [
+        "Mr. Ritesh Agarwal",
+        "Dr. Prabodh Gour",
+        "Mr. Ajeet Verma",
+        "Mr. Ravi Verma",
+        "Mr. Anil Kumar Singh",
+        "Mr. Paras Agarwal",
+        "Mr. Mukul Gupta",
+        "Mr. Amiyo Das",
+        "Mrs. Tejasvita Singh",
+        "Ms. Sunaina Mahajan",
+        "Ms. Priyadarshini Gour",
+        "Ms. Trishty Khandelwal",
+        "Shri Shivam Kashyap",
+        "Ms. Anu Sanori",
+        "Mr. Anupam Saxena",
+        "Mr. Shubham Dalakoti",
+        "Mrs. Hema Johri",
+        "Ms. Alpna Sharma",
+        "Ms. Diya Oli"
+      ],
+      "COMPUTER": [
+        "Mr. Deepak Awasthi",
+        "Mr. Rajat Kapoor",
+        "Mr. Sanjeev Sharma",
+        "Mr. Ankur Bhardwaj",
+        "Mrs. Shivani Rastogi",
+        "Mr. Sachin Arora",
+        "Ms. Sonali Singh",
+        "Mr. Ritik Saxena",
+        "Mrs. Shanu Bhalla",
+        "Ms. Khyati Pancholi"
+      ]
     }
   }
+
+
+  
   
