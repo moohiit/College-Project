@@ -2,104 +2,8 @@
 <html>
   <head>
     <title>Deeksha Workshop</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-      }
-
-      header {
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-      }
-
-      .container {
-        max-width: 100%;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .form-header {
-        text-align: center;
-        color: #f0e9e9;
-        background-color: rgb(192, 42, 42);
-        margin: 0;
-      }
-
-      .form-label {
-        display: block;
-        margin-top: 10px;
-        font-weight: bold;
-        margin-right: 10px;
-      }
-
-      .form-input {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        margin-right: 10px; /* Add margin from the right */
-        width: calc(
-          100% - 10px
-        ); /* Subtract margin width to maintain fixed size */
-      }
-
-      .form-checkbox {
-        margin-top: 5px;
-      }
-
-      .form-submit {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        margin-top: 10px;
-        padding: 10px 20px;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-
-      .form-submit:hover {
-        background-color: #0056b3;
-      }
-
-      footer {
-        background-color: #007bff;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-      }
-
-      /* Responsive Styling */
-      @media (max-width: 768px) {
-        .form-input {
-          width: 100%;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          padding: 10px;
-        }
-
-        .form-input {
-          width: 100%;
-        }
-      }
-
-      .box {
-        display: flex;
-        margin-top: 10px;
-        padding: 5px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
   </head>
   <body>
     <header>
@@ -107,12 +11,50 @@
     </header>
     <div class="container">
       <div>
-        <h2 class="form-header">Workshop Registration Form</h2>
+        <h2 class="form-heading">Workshop Registration Form</h2>
       </div>
       <div class="">
         <form action="/submit" method="post" class="form-container">
-          <div>
-            <div>
+          <!-- new fileds added -->
+          <div class="box-container">
+            <div class="dept-box">
+              <div class="box">
+                <label class="form-label" for="dept">Department: </label>
+                <select class="select-field" name="dept" id="dept" required>
+                  <option value="">Select Department</option>
+                </select>
+              </div>
+              <div class="box">
+                <label class="form-label" for="name">Faculty: </label>
+                <select class="select-field" name="name" id="name" required>
+                  <option value="">Select Faculty</option>
+                </select>
+              </div>
+            </div>
+            <div class="zone-box">
+              <div class="box">
+                <label class="form-label" for="zone">Zone/Region: </label>
+                <select class="select-field" name="zone" id="zone" required>
+                  <option value="">Select Regioin/Zone</option>
+                </select>
+              </div>
+              <div class="box">
+                <label class="form-label" for="college">College/School: </label>
+                <select
+                  class="select-field"
+                  name="college"
+                  id="college"
+                  required
+                >
+                  <option value="">Select College/School</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- new fileds ends here. -->
+
+          <div class="box-container">
+            <div class="box">
               <label for="date" class="form-label">Date:</label>
               <input
                 type="date"
@@ -121,35 +63,9 @@
                 class="form-input"
                 required
               />
+            </div>
 
-              <!-- new fileds added -->
-              <div class="box">
-                <label class="form-label" for="dept">Department: </label>
-                <select name="dept" id="dept" required>
-                  <option value="">Select Department</option>
-                </select>
-              </div>
-              <div class="box">
-                <label class="form-label" for="name">Faculty: </label>
-                <select name="name" id="name" required>
-                  <option value="">Select Faculty</option>
-                </select>
-              </div>
-              <div class="box">
-                <label class="form-label" for="zone">Zone/Region: </label>
-                <select name="zone" id="zone" required>
-                  <option value="">Select Regioin/Zone</option>
-                </select>
-              </div>
-              <div class="box">
-                <label class="form-label" for="college">College/School: </label>
-                <select name="college" id="college" required>
-                  <option value="">Select College/School</option>
-                </select>
-              </div>
-
-              <!-- new fileds ends here. -->
-
+            <div class="box">
               <label for="location" class="form-label">Location:</label>
               <input
                 type="text"
@@ -158,49 +74,69 @@
                 class="form-input"
                 required
               />
-
-              <h2 class="form-header">TGT Teachers:</h2>
-              <label for="tgt_name" class="form-label">Names:</label>
-              <input
-                type="text"
-                id="tgt_name"
-                name="tgt_name"
-                class="form-input"
-                required
-              />
-
-              <label for="tgt_count" class="form-label">Count:</label>
-              <input
-                type="number"
-                id="tgt_count"
-                name="tgt_count"
-                class="form-input"
-                required
-              />
-            </div>
-
-            <div>
-              <h2 class="form-header">PGT Teachers:</h2>
-              <label for="pgt_name" class="form-label">Names:</label>
-              <input
-                type="text"
-                id="pgt_name"
-                name="pgt_name"
-                class="form-input"
-                required
-              />
-
-              <label for="pgt_count" class="form-label">Count:</label>
-              <input
-                type="number"
-                id="pgt_count"
-                name="pgt_count"
-                class="form-input"
-                required
-              />
             </div>
           </div>
-          <div>
+
+          <div class="box-container">
+            <div>
+              <div class="box">
+              <h2 class="form-header">TGT Teachers:</h2>
+            </div>
+            <div class="tgt-box">
+              <div class="box">
+                <label for="tgt_name" class="form-label">Names:</label>
+                <input
+                  type="text"
+                  id="tgt_name"
+                  name="tgt_name"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <div class="box">
+                <label for="tgt_count" class="form-label">Count:</label>
+                <input
+                  type="number"
+                  id="tgt_count"
+                  name="tgt_count"
+                  class="form-input"
+                  required
+                />
+              </div>
+            </div>
+
+            </div>
+            <div>
+              <div class="box">
+              <h2 class="form-header">PGT Teachers:</h2>
+            </div>
+            <div class="pgt-box">
+              <div class="box">
+                <label for="pgt_name" class="form-label">Names:</label>
+                <input
+                  type="text"
+                  id="pgt_name"
+                  name="pgt_name"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="box">
+                <label for="pgt_count" class="form-label">Count:</label>
+                <input
+                  type="number"
+                  id="pgt_count"
+                  name="pgt_count"
+                  class="form-input"
+                  required
+                />
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="box">
             <label for="workshop_conducted" class="form-label"
               >Workshop Conducted (Yes/No):</label
             >
@@ -211,50 +147,70 @@
               class="form-checkbox"
               checked
             />
+          </div>
 
-            <h2 class="form-header">Strength of the student (Tenth/Twelth):</h2>
-            <label for="tenth_strength" class="form-label">Tenth:</label>
-            <input
-              type="number"
-              id="tenth_strength"
-              name="tenth_strength"
-              class="form-input"
-              required
-            />
-            <label for="twelth_strength" class="form-label">Twelth:</label>
-            <input
-              type="number"
-              id="twelth_strength"
-              name="twelth_strength"
-              class="form-input"
-              required
-            />
+          <div class="box-container">
+            <h2 class="form-header">Strength (Matriculation/Intermediate):</h2>
+            <div class="box-container">
+              <div class="box">
+                <label for="tenth_strength" class="form-label"
+                  >Matriculation:</label
+                >
+                <input
+                  type="number"
+                  id="tenth_strength"
+                  name="tenth_strength"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="box">
+                <label for="twelth_strength" class="form-label"
+                  >Intermediate:</label
+                >
+                <input
+                  type="number"
+                  id="twelth_strength"
+                  name="twelth_strength"
+                  class="form-input"
+                  required
+                />
+              </div>
+            </div>
 
-            <label for="topic_discussed" class="form-label"
-              >Topic Discussed:</label
-            >
-            <textarea
-              id="topic_discussed"
-              name="topic_discussed"
-              class="form-input"
-              required
-            ></textarea>
+            <div class="box">
+              <label for="topic_discussed" class="form-label"
+                >Topic Discussed:</label
+              >
+              <textarea
+                id="topic_discussed"
+                name="topic_discussed"
+                class="form-input"
+                required
+              ></textarea>
+            </div>
 
-            <label for="date" class="form-label">Next Visit if any:</label>
-            <input
-              type="text"
-              id="visit"
-              name="visit"
-              class="form-input"
-              required
-            />
+            <div class="box">
+              <label for="date" class="form-label">Next Visit if any:</label>
+              <input
+                type="text"
+                id="visit"
+                name="visit"
+                class="form-input"
+                required
+              />
+            </div>
 
+          </div>
+          <div class="form-box" >
+            <div class="box">
             <input
               type="submit"
               id="alert"
               value="Submit"
               class="form-submit"
             />
+          </div>
           </div>
         </form>
       </div>
