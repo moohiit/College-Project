@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3000; // You can change the port as needed
 
-const ExcelJS = require('exceljs');
+const ExcelJS = require("exceljs");
 const workbook = new ExcelJS.Workbook();
 let worksheet;
 
@@ -11,47 +11,62 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve the HTML form
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/form.html');
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/form.html");
 });
 
 // Load existing data from the Excel file when the server starts
-workbook.xlsx.readFile('responses.xlsx')
+workbook.xlsx
+  .readFile("responses.xlsx")
   .then(() => {
     // Assuming the worksheet is named 'FormResponses'
-    worksheet = workbook.getWorksheet('FormResponses');
+    worksheet = workbook.getWorksheet("FormResponses");
   })
-  .catch(error => {
+  .catch((error) => {
     // Handle the case when the file doesn't exist yet or there is an error
     // Creating a new worksheet and adding headers
-    worksheet = workbook.addWorksheet('FormResponses');
+    worksheet = workbook.addWorksheet("FormResponses");
+    // Add headers here
+    const headers = [
+      "Date",
+      "Department",
+      "Faculty",
+      "Zone/Region",
+      "College/School",
+      "Location",
+      "TGT_Teachers",
+      "TGT_Count",
+      "PGT_Teachers",
+      "PGT_Count",
+      "Workshop_Conducted",
+      "Metriculation_Count",
+      "Intermediate_Count",
+      "Topic_Discussed",
+      "Next_Visit",
+    ]; // Replace with your actual field names
+    worksheet.addRow(headers);
   });
 
 // Handle form submission
-app.post('/submit', (req, res) => {
+app.post("/submit", (req, res) => {
   const data = req.body;
 
-  // Check if the worksheet is already defined, and if not, add headers
-  if (!worksheet) {
-    worksheet = workbook.addWorksheet('FormResponses');
-    const headers = Object.keys(data);
-    worksheet.addRow(headers);
-  }
-
+  // Check if the worksheet is already defined (it should be from the previous step)
   // Add the form data to the Excel sheet
   const values = Object.values(data);
   worksheet.addRow(values);
 
   // Save the Excel file
-  workbook.xlsx.writeFile('responses.xlsx')
+  workbook.xlsx
+    .writeFile("responses.xlsx")
     .then(() => {
-      console.log('Data saved to responses.xlsx');
+      console.log("Data saved to responses.xlsx");
     })
-    .catch(error => {
-      console.error('Error saving data:', error);
+    .catch((error) => {
+      console.error("Error saving data:", error);
     });
 
-  res.redirect('/');
+  res.redirect("/");
 });
 
 app.listen(port, () => {
