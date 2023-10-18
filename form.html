@@ -2,8 +2,147 @@
 <html>
   <head>
     <title>Deeksha Workshop</title>
-    <link rel="stylesheet" href="style.css" />
-    <style></style>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+    <!-- <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+      }
+
+      header {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        padding-top: 20px;
+        border: 2px solid black;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-heading {
+        text-align: center;
+        color: #f0e9e9;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgb(192, 42, 42);
+        margin: 0;
+      }
+      .form-header {
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgb(182, 245, 130);
+        margin: 0;
+      }
+
+      .form-label {
+        color: #555555;
+        width: 200px;
+        display: block;
+        margin-top: 10px;
+        margin-left: 50px;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .form-input {
+        width: 300px;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-right: 10px; /* Add margin from the right */
+        
+      }
+
+      .select-field {
+        width: 300px;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-right: 10px;
+      }
+
+      .form-checkbox {
+        margin-top: 5px;
+      }
+
+      .form-submit {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .form-submit:hover {
+        background-color: #0056b3;
+      }
+
+      footer {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      /* Responsive Styling */
+      /* @media (max-width: 768px) {
+  .form-input {
+    width: 100%;
+  }
+} */
+
+      .box {
+        display: flex;
+        margin-top: 10px;
+        padding: 5px;
+      }
+
+      .box-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .dept-box,
+      .zone-box,
+      .tgt-box,
+      .pgt-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .box-heading {
+        display: block;
+      }
+
+      .form-box {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+    </style> -->
   </head>
   <body>
     <header>
@@ -80,59 +219,58 @@
           <div class="box-container">
             <div>
               <div class="box">
-              <h2 class="form-header">TGT Teachers:</h2>
-            </div>
-            <div class="tgt-box">
-              <div class="box">
-                <label for="tgt_name" class="form-label">Names:</label>
-                <input
-                  type="text"
-                  id="tgt_name"
-                  name="tgt_name"
-                  class="form-input"
-                  required
-                />
+                <h2 class="form-header">TGT Teachers:</h2>
               </div>
+              <div class="tgt-box">
+                <div class="box">
+                  <label for="tgt_name" class="form-label">Names:</label>
+                  <input
+                    type="text"
+                    id="tgt_name"
+                    name="tgt_name"
+                    class="form-input"
+                    required
+                  />
+                </div>
 
-              <div class="box">
-                <label for="tgt_count" class="form-label">Count:</label>
-                <input
-                  type="number"
-                  id="tgt_count"
-                  name="tgt_count"
-                  class="form-input"
-                  required
-                />
+                <div class="box">
+                  <label for="tgt_count" class="form-label">Count:</label>
+                  <input
+                    type="number"
+                    id="tgt_count"
+                    name="tgt_count"
+                    class="form-input"
+                    required
+                  />
+                </div>
               </div>
-            </div>
-
             </div>
             <div>
               <div class="box">
-              <h2 class="form-header">PGT Teachers:</h2>
-            </div>
-            <div class="pgt-box">
-              <div class="box">
-                <label for="pgt_name" class="form-label">Names:</label>
-                <input
-                  type="text"
-                  id="pgt_name"
-                  name="pgt_name"
-                  class="form-input"
-                  required
-                />
+                <h2 class="form-header">PGT Teachers:</h2>
               </div>
-              <div class="box">
-                <label for="pgt_count" class="form-label">Count:</label>
-                <input
-                  type="number"
-                  id="pgt_count"
-                  name="pgt_count"
-                  class="form-input"
-                  required
-                />
+              <div class="pgt-box">
+                <div class="box">
+                  <label for="pgt_name" class="form-label">Names:</label>
+                  <input
+                    type="text"
+                    id="pgt_name"
+                    name="pgt_name"
+                    class="form-input"
+                    required
+                  />
+                </div>
+                <div class="box">
+                  <label for="pgt_count" class="form-label">Count:</label>
+                  <input
+                    type="number"
+                    id="pgt_count"
+                    name="pgt_count"
+                    class="form-input"
+                    required
+                  />
+                </div>
               </div>
-            </div>
             </div>
           </div>
 
@@ -200,22 +338,21 @@
                 required
               />
             </div>
-
           </div>
-          <div class="form-box" >
+          <div class="form-box">
             <div class="box">
-            <input
-              type="submit"
-              id="alert"
-              value="Submit"
-              class="form-submit"
-            />
-          </div>
+              <input
+                type="submit"
+                id="alert"
+                value="Submit"
+                class="form-submit"
+              />
+            </div>
           </div>
         </form>
       </div>
     </div>
-    <script>
+    <!-- <script>
       let teachersObject = {
         "ZOOLOGY DEPTT.": [
           "Dr. Rekha Gangwar",
@@ -516,8 +653,8 @@
       document.getElementById("alert").onclick = function () {
         window.alert("Details submitted Successfully......");
       };
-    </script>
-    <!-- <script src="script.js"></script> -->
+    </script> -->
+    <script src="/script.js"></script>
     <footer>&copy; 2023 Deeksha Workshop. All rights reserved.</footer>
   </body>
 </html>

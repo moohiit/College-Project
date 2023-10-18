@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000; // You can change the port as needed
+const port = 3000;
 
 const ExcelJS = require("exceljs");
 const workbook = new ExcelJS.Workbook();
@@ -9,6 +9,9 @@ let worksheet;
 // Middleware to parse JSON and form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files (CSS, JavaScript)
+app.use(express.static(__dirname));
 
 // Serve the HTML form
 app.get("/", (req, res) => {
@@ -28,11 +31,11 @@ workbook.xlsx
     worksheet = workbook.addWorksheet("FormResponses");
     // Add headers here
     const headers = [
-      "Date",
       "Department",
       "Faculty",
       "Zone/Region",
       "College/School",
+      "Date",
       "Location",
       "TGT_Teachers",
       "TGT_Count",
@@ -71,4 +74,9 @@ app.post("/submit", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
 });
