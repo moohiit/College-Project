@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cascading Dropdowns</title>
+  </head>
+  <body>
+    <label for="term">Select Term:</label>
+    <select id="term" onchange="populateMonths()">
+      <option value="">Select Term</option>
+    </select>
+
+    <br />
+
+    <label for="month">Select Month:</label>
+    <select id="month" onchange="populateActivities()">
+      <option value="">Select Month</option>
+    </select>
+
+    <br />
+
+    <label for="activities">Select Activity:</label>
+    <select id="activities"></select>
+
+    <script>
+      // Your JSON data
+      var jsonData = {
+        academicYear: [
+          {
+            term: "Term one (15 July-25 Dec)",
+            months: [
+              {
+                name: "July",
+                activities: [
+                  "1-14 July: End of Session & Back Log Completion",
+                  "15-Jul: Centrally Subject Allocation & Preparation of New Session",
+                ],
+              },
+              {
+                name: "August",
+                activities: [
+                  "07-Aug: Session Start for II & III Year",
+                  "15-Aug: Independence Day",
+                  "16-25 August: Orientation & Induction",
+                  "Fourth & Fifth Saturday: Joint Freshers",
+                ],
+              },
+              {
+                name: "September",
+                activities: [
+                  "05-Sep: Teachers Day",
+                  "Second or Third Saturday: Discipline Oath Taking",
+                ],
+              },
+              {
+                name: "October",
+                activities: [
+                  "Every Saturday: KCMT Navratnas Hunting",
+                  "21/23 October: Navratra Mahautsav",
+                  "Dandiea Night",
+                ],
+              },
+              {
+                name: "November",
+                activities: ["10-Nov: Dipawali Celebration"],
+              },
+              {
+                name: "December",
+                activities: [
+                  "The first week of December: Brijlal Memorial Tournament",
+                  "04-22 December: Mid Term Examinations",
+                  "23-Dec: Christmas Celebration",
+                  "25-Dec: Manavta Diwas",
+                ],
+              },
+            ],
+          },
+          {
+            term: "Term Two (1Jan-30 June)",
+            months: [
+              {
+                name: "January",
+                activities: [
+                  "01-Jan: New Year Celebration & Resolutions",
+                  "26-Jan: Republic Day Celebrations",
+                  "13/20/27 January: Interdepartmental Sports Completions",
+                ],
+              },
+              {
+                name: "February",
+                activities: [
+                  "01-12 February: Management Run",
+                  "12-24 February: Annual Athletic meet",
+                  "03/10/17/24 February: Excursion Tours",
+                ],
+              },
+              {
+                name: "March",
+                activities: [
+                  "2/9/16/30 March: National Conferences / Seminars",
+                  "23-Mar: Holi Celebrations",
+                ],
+              },
+              {
+                name: "April",
+                activities: [
+                  "End Term Examinations: Annual Courses/ NEP",
+                  "20/27 April: HR Conclave",
+                  "21/28 April: Farewell Concluding Ceremony",
+                ],
+              },
+              {
+                name: "May",
+                activities: ["4/11/18/25 May: FDP/ MDP / Refresher / Workshop"],
+              },
+              {
+                name: "June",
+                activities: [
+                  "AOPs for New Session: 01-30 June",
+                  "22-Jun: KCMT Foundation Day Celebrations",
+                ],
+              },
+            ],
+          },
+        ],
+      };
+
+      // Function to populate terms in the first dropdown
+      function populateTerms() {
+        var termDropdown = document.getElementById("term");
+
+        jsonData.academicYear.forEach(function (term) {
+          var option = document.createElement("option");
+          option.value = term.term;
+          option.text = term.term;
+          termDropdown.add(option);
+        });
+      }
+
+      // Function to populate months in the second dropdown based on selected term
+      function populateMonths() {
+        var termDropdown = document.getElementById("term");
+        var monthDropdown = document.getElementById("month");
+        var activitiesDropdown = document.getElementById("activities");
+
+        // Clear previous data
+        monthDropdown.innerHTML = "<option value=''>Select Month</option>";
+        activitiesDropdown.innerHTML = "<option value=''>Select Activity</option>";
+
+        var selectedTerm = termDropdown.value;
+
+        if (selectedTerm) {
+          var selectedTermData = jsonData.academicYear.find(function (term) {
+            return term.term === selectedTerm;
+          });
+
+          selectedTermData.months.forEach(function (month) {
+            var option = document.createElement("option");
+            option.value = month.name;
+            option.text = month.name;
+            monthDropdown.add(option);
+          });
+
+          // Populate activities dropdown
+          populateActivities();
+        }
+      }
+
+      // Function to populate activities in the dropdown based on selected month
+      function populateActivities() {
+        var termDropdown = document.getElementById("term");
+        var monthDropdown = document.getElementById("month");
+        var activitiesDropdown = document.getElementById("activities");
+
+        // Clear previous data
+        activitiesDropdown.innerHTML = "<option value=''>Select Activity</option>";
+
+        var selectedTerm = termDropdown.value;
+        var selectedMonth = monthDropdown.value;
+
+        if (selectedTerm && selectedMonth) {
+          var selectedTermData = jsonData.academicYear.find(function (term) {
+            return term.term === selectedTerm;
+          });
+
+          var selectedMonthData = selectedTermData.months.find(function (
+            month
+          ) {
+            return month.name === selectedMonth;
+          });
+
+          selectedMonthData.activities.forEach(function (activity) {
+            var option = document.createElement("option");
+            option.value = activity;
+            option.text = activity;
+            activitiesDropdown.add(option);
+          });
+        }
+      }
+
+      // Populate the terms on page load
+      populateTerms();
+    </script>
+  </body>
+</html>

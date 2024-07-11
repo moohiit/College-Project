@@ -1,0 +1,249 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.header {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #0c356a;
+  color: #f5f5f5;
+  height: fit-content;
+  width: 100%;
+  z-index: 100;
+  font-size: 1.5rem;
+  padding: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  font-weight: 700;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #0c356a;
+  color: #f5f5f5;
+  height: fit-content;
+  width: 100%;
+  z-index: 100;
+  padding: 0 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+footer p {
+  font-size: 0.6rem;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  padding: 3px;
+}
+ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  font-size: 0.8rem;
+  display: inline-block; /* Display list items in the same row */
+  margin-right: 15px; /* Adjust spacing between items */
+}
+
+a {
+  text-decoration: none; /* Remove default underline */
+  color: white; /* Set text color to white */
+}
+
+a:hover {
+  color: #0c356a;
+}
+
+i {
+  margin-right: 5px; /* Adjust spacing between icon and text */
+}
+
+h1 {
+  color: darkblue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+h3 {
+  font-weight: 600;
+  color: darkblue;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+}
+
+#startDay.daterange {
+  max-width: 25px;
+  margin-left: 5px;
+}
+#endDay.daterange {
+  max-width: 25px;
+  margin-left: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: darkblue;
+  width: 100%;
+}
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  min-width: 200px;
+  width: calc(50% - 8px);
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+select {
+  width: calc(100% - 8px);
+}
+
+input[type="date"] {
+  width: calc(50% - 8px);
+}
+
+textarea {
+  width: calc(100% - 8px);
+}
+
+button {
+  background-color: #0c356a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 800px) {
+  select,
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: calc(100% - 8px);
+  }
+}
+
+h2 {
+  color: rgb(94, 94, 94);
+  font-size: larger;
+  font-weight: 700;
+}
+#tables{
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: left;
+}
+
+th {
+  background-color: #0c356a;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #4858a03d;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+
+.button-container {
+  text-align: center;
+  width: 100%;
+}
+
+.button-container button {
+  margin: 10px;
+}
+
+@media (max-width: 800px) {
+  select,
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: calc(100% - 8px);
+  }
+
+  button {
+    width: calc(50% - 8px);
+  }
+}

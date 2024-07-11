@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Replace with your background image */
+  background-image: url('gate_desk.png'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.login-form {
+  background: #a5d3e588; /* Light grey background color */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.login-form h1 {
+  margin-bottom: 20px;
+  color: darkblue; /* Dark blue text color */
+  font-size: 24px; /* Increased font size */
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: darkblue; /* Medium grey text color */
+}
+
+.login-form input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-form button {
+  background-color: #0C356A;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.login-form button:hover {
+  background-color: darkblue; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    width: 80%;
+  }
+  .login-container{
+    background-image: url("./gate_mobile.png");
+  }
+}
+

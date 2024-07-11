@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Academic Calendar Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Include jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <h1>Academic Calendar Generator</h1>
+    <div class="form-container">
+      <!-- Form 1 -->
+      <form id="calendarForm1">
+        <h3><center>IILA- Identified Institute-Level Activities</center></h3>
+        <div class="form-row">
+          <label for="term">Select Term:</label>
+          <select id="term" onchange="populateMonths()">
+            <option value="">Select Term</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="months">Select Month:</label>
+          <select id="months" onchange="populateActivities1()">
+            <option value="">Select Month</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="activities">Select Activity:</label>
+          <select id="activities"></select>
+        </div>
+        <div class="form-row">
+          <label for="startDay-1">Start Day:</label>
+          <input type="number" id="startDay-1" min="1" max="31" required />
+        </div>
+        <div class="form-row">
+          <label for="endDay-1">End Day:</label>
+          <input type="number" id="endDay-1" min="1" max="31" required />
+        </div>
+        <div class="form-row">
+          <label for="inCharge-1">Activity Incharge:</label>
+          <input
+            type="text"
+            id="inCharge-1"
+            placeholder="Enter In Charge Name"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="objective-1">Objective:</label>
+          <textarea id="objective-1" rows="2" required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="outcome-1">Outcome:</label>
+          <textarea id="outcome-1" rows="2" required></textarea>
+        </div>
+        <div class="button-container">
+          <button type="button" onclick="addRow1()">Add to Calendar</button>
+        </div>
+      </form>
+    </div>
+    <!-- form container ends here -->
+    <div id="tables">
+      <div id="table-container-1">
+        <h2>
+          <center>
+            IILA- Identified Institute-Level Activities -
+            <span id="currentYear"></span>
+          </center>
+        </h2>
+        <table id="calendarTable-1">
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Activity</th>
+              <th>Month</th>
+              <th>Date Range</th>
+              <th>Activity Incharge</th>
+              <th>Objective</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Calendar rows will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+    
+    </div>
+    <div class="button-container">
+      <button onclick="previewCalendar()">Preview Calendar</button>
+      <button onclick="downloadPDF()">Download PDF</button>
+      <button onclick="downloadExcel()">Download Excel</button>
+    </div>
+
+    <!-- Include SheetJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <!-- Include html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+    <!-- Include external script file -->
+    <script src="iila.js"></script>
+  </body>
+</html>

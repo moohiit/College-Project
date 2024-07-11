@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cascading Dropdowns</title>
+  </head>
+  <body>
+    <label for="department">Select Department:</label>
+    <select id="department" onchange="populateActivities()">
+      <option value="">Select Department</option>
+      <!-- Add options dynamically using JavaScript -->
+    </select>
+
+    <br />
+
+    <label for="activity">Select Activity:</label>
+    <select id="activity">
+      <option value="">Select Activity</option>
+      <!-- Add options dynamically using JavaScript -->
+    </select>
+
+    <script>
+      // Your JSON data
+      var jsonData = {
+        departments: {
+          MBA: [
+            "Presentations",
+            "Case Studies",
+            "Simulation Exercises",
+            "Ad Mad Show",
+            "Research Project Work",
+            "Market Survey",
+            "On The Job Trainings",
+            "Swayam Certification",
+            "NTPL Course",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Industrial Visit",
+            "Marathon Certification",
+            "Hackathon Certification",
+            "Web & Software Certification",
+            "Domain Module",
+            "Entrepreneurship Program",
+            "Textile Laboratory",
+            "Fashion & Beauty workshop",
+            "Virology Workshop",
+            "Phlebotomy Workshop",
+            "Bio Informatics Workshop",
+            "Bio Chemistry Workshop",
+            "Apiculture Workshop",
+            "Fisheries Culture Workshop",
+            "Fungi Culture Workshop",
+            "Alga culture Workshop",
+            "Hydroponic Workshop",
+            "Agro & Horticulture Workshop",
+            "Aromatic Che. Certification",
+            "Hardware workshop",
+            "Food & Nutrition Workshop",
+            "First Aid & Emergency Care",
+            "Comp. Accounting Certification",
+            "Data Analytics Certification",
+          ],
+          BBA: [
+            "Presentations",
+            "Case Studies",
+            "Simulation Exercises",
+            "Ad Mad Show",
+            "Research Project Work",
+            "Market Survey",
+            "On The Job Trainings",
+            "Swayam Certification",
+            "NTPL Course",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Industrial Visit",
+            "Web & Software Certification",
+            "Textile Laboratory",
+            "First Aid & Emergency Care",
+          ],
+          MCom: [
+            "Presentations",
+            "Case Studies",
+            "Simulation Exercises",
+            "Research Project Work",
+            "Market Survey",
+            "On The Job Trainings",
+            "Swayam Certification",
+            "NTPL Course",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Marathon Certification",
+            "Web & Software Certification",
+            "Textile Laboratory",
+            "First Aid & Emergency Care",
+            "Comp. Accounting Certification",
+            "Data Analytics Certification",
+          ],
+          "B. Com-H": [
+            "Presentations",
+            "Case Studies",
+            "Simulation Exercises",
+            "Research Project Work",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Industrial Visit",
+            "Marathon Certification",
+            "Web & Software Certification",
+            "Textile Laboratory",
+            "Fashion & Beauty workshop",
+            "Agro & Horticulture Workshop",
+            "First Aid & Emergency Care",
+            "Comp. Accounting Certification",
+          ],
+          "B.Com": [
+            "Presentations",
+            "Case Studies",
+            "Simulation Exercises",
+            "Research Project Work",
+            "Market Survey",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Industrial Visit",
+            "Marathon Certification",
+            "Web & Software Certification",
+            "Fashion & Beauty workshop",
+            "First Aid & Emergency Care",
+            "Comp. Accounting Certification",
+          ],
+          MCA: [
+            "Presentations",
+            "Swayam Certification",
+            "NTPL Course",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Marathon Certification",
+            "Hackathon Certification",
+            "Web & Software Certification",
+            "Offsite Laboratory Work",
+            "Domain Module",
+            "Entrepreneurship Program",
+            "Aromatic Che. Certification",
+            "Hardware workshop",
+            "First Aid & Emergency Care",
+          ],
+          BCA: [
+            "Presentations",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Hackathon Certification",
+            "Web & Software Certification",
+            "First Aid & Emergency Care",
+          ],
+          MSc: [
+            "Presentations",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Marathon Certification",
+            "Offsite Laboratory Work",
+            "Textile Laboratory",
+            "Fashion & Beauty workshop",
+            "Virology Workshop",
+            "Phlebotomy Workshop",
+            "Bio Informatics Workshop",
+            "Bio Chemistry Workshop",
+            "Apiculture Workshop",
+            "Fisheries Culture Workshop",
+            "Fungi Culture Workshop",
+            "Alga culture Workshop",
+            "Hydroponic Workshop",
+            "Agro & Horticulture Workshop",
+            "Aromatic Che. Certification",
+            "Food & Nutrition Workshop",
+            "First Aid & Emergency Care",
+          ],
+          BSc: [
+            "Presentations",
+            "Guest Lecture",
+            "Workshops",
+            "Seminar / Conference",
+            "Offsite Laboratory Work",
+            "Textile Laboratory",
+            "Fashion & Beauty workshop",
+            "Virology Workshop",
+            "Phlebotomy Workshop",
+            "Bio Informatics Workshop",
+            "Bio Chemistry Workshop",
+            "Fungi Culture Workshop",
+            "Alga culture Workshop",
+            "Hydroponic Workshop",
+            "Agro & Horticulture Workshop",
+            "Aromatic Che. Certification",
+            "Food & Nutrition Workshop",
+            "First Aid & Emergency Care",
+          ],
+        },
+      };
+
+      // Function to populate departments in the first dropdown
+      function populateDepartments() {
+        var departmentDropdown = document.getElementById("department");
+
+        for (var department in jsonData.departments) {
+          var option = document.createElement("option");
+          option.value = department;
+          option.text = department;
+          departmentDropdown.add(option);
+        }
+      }
+
+      // Function to populate activities in the second dropdown based on selected department
+      function populateActivities() {
+        var departmentDropdown = document.getElementById("department");
+        var activityDropdown = document.getElementById("activity");
+
+        // Clear previous data
+        activityDropdown.innerHTML =
+          "<option value=''>Select Activity</option>";
+
+        var selectedDepartment = departmentDropdown.value;
+
+        if (selectedDepartment) {
+          jsonData.departments[selectedDepartment].forEach(function (activity) {
+            var option = document.createElement("option");
+            option.value = activity;
+            option.text = activity;
+            activityDropdown.add(option);
+          });
+        }
+      }
+
+      // Populate the departments on page load
+      populateDepartments();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Entry System - College Name</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your custom styles here -->
+    <style>
+      /* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero img {
+    width: 60%; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.hero-content {
+    max-width: 40%;
+    text-align: left;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4285f4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Features section styles */
+.features {
+    padding: 50px;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.feature {
+    margin-bottom: 30px;
+}
+
+.feature img {
+    width: 100%; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.feature p {
+    font-size: 1.1em;
+}
+
+/* About section styles */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.about img {
+    width: 40%; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 1.2em;
+    max-width: 50%;
+}
+
+/* Contact section styles */
+.contact {
+    background-color: #f4f4f4;
+    padding: 50px;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 400px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+form button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .about p {
+        max-width: 100%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../logo.png" alt="College Logo">
+            <h1>Gate Entry System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to the Gate Entry System</h2>
+            <p>Your solution for efficient gate entry and exit management at College Name.</p>
+            <a href="#features" class="btn">Explore Features</a>
+        </div>
+        <img src="../gate.png" alt="Gate Entry System in action">
+    </section>
+
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <img src="../gate.png" alt="Feature 1">
+            <h3>Efficient Entry and Exit Management</h3>
+            <p>Streamline the entry and exit processes for students, faculty, and staff.</p>
+        </div>
+        <div class="feature">
+            <img src="../gate.png" alt="Feature 2">
+            <h3>Visitor Management</h3>
+            <p>Manage and track visitors effectively, ensuring a secure environment for everyone.</p>
+        </div>
+        <!-- Add more features as needed -->
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Gate Entry System</h2>
+        <p>The Gate Entry System is a comprehensive solution designed to manage and monitor the entry and exit of individuals at College Name. Our system not only simplifies the process for students and staff but also ensures the security of the campus by keeping track of visitors.</p>
+        <img src="../gate.png" alt="About Gate Entry System">
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or need assistance? Contact our support team.</p>
+        <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Gate Entry System | Developed by Mohit Patel & Raman Goyal</p>
+    </footer>
+
+    <!-- Add your scripts here if needed -->
+
+</body>
+
+</html>
